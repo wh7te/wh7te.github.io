@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>
+        
+        小白搬瓦工(BandwagonHost)搭建Shadowsocks · wh7te&#39;s blog
+        
+    </title>
+    <link rel="icon" href= /assests/favicon.ico>
+    <!-- 提前加载place holder  -->
+    <style>
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url('/font/Oswald-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/font/Source Sans Pro.woff'),
+            url('/font/Source Sans Pro.woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Source Code Pro';
+            src: url('/font/SourceCodePro-Regular.ttf.woff'),
+            url('/font/SourceCodePro-Regular.ttf.woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        
+        .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0px;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2s ease-out 0s 1;
+        }
+        @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        99% {
+            transform: translate3d(0, 0, 0);
+        }
+        99.1% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(-226px, 0, 0);
+        }
+    }
+    </style>
+    <link rel="stylesheet" href = "/css/style.css?v=20170925" />
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
+    
+    <script src="/scripts/main.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >wh7te&#39;s blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">小白搬瓦工(BandwagonHost)搭建Shadowsocks</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>wh7te's blog</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-img" style="background-image: url(http://oumn0o088.bkt.clouddn.com/post-bg.jpg)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            小白搬瓦工(BandwagonHost)搭建Shadowsocks
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+        </p>
+        <!-- 404 -->
+        
+        <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2017/10/02</span>
+            </div>
+        
+    </div>
+</div>
+        <div class="container">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>&emsp;&emsp;买vps的理由就不用多说，有了vps又怎能少的了搭个ss呢。当然我今天的目标是让没有这方面经验的朋友能快速上手，所以只是讲搬瓦工后台一键安装，动手能力强的朋友可以自行试试shell脚本安装或是手动安装，大佬们请无视咯：)。好了，废话不多说。</p>
+<h2 id="vps购买"><a href="#vps购买" class="headerlink" title="vps购买"></a>vps购买</h2><h3 id="vps选择"><a href="#vps选择" class="headerlink" title="vps选择"></a>vps选择</h3><p>&emsp;&emsp;vps的选择其实挺多，还有 <a href="http://www.vultr.com/" target="_blank" rel="external">Vultr</a>、<a href="http://www.linode.com/" target="_blank" rel="external">Linode</a>等都很不错，不过今天从各方面综合考虑，推荐搬瓦工给小白们。</p>
+<h3 id="vps支付"><a href="#vps支付" class="headerlink" title="vps支付"></a>vps支付</h3><p>&emsp;&emsp;vps套餐有很多，选择适合自己的就好了，<a href="https://bwh1.net/vps-hosting.php" target="_blank" rel="external">搬瓦工(BandwagonHost)</a></p>
+<p><img src="https://i.imgur.com/1E5l6ko.jpg" alt=""></p>
+<p>&emsp;&emsp;对于小白，推荐19.99美刀一年的套餐，适合新手学习Linux系统和建站使用，使用优惠码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BWH1ZBPVK</div></pre></td></tr></table></figure></p>
+<p>还能减6%<br><img src="https://i.imgur.com/SrjSVr0.jpg" alt=""></p>
+<p>&emsp;&emsp;之后是填写信息,除了邮箱外，都可随意。</p>
+<p><img src="https://i.imgur.com/YemnItD.jpg" alt=""></p>
+<p>&emsp;&emsp;支付方式有支付宝，选择Alipay即可，这一点倒很方便。</p>
+<p><img src="https://i.imgur.com/vWuPliR.jpg" alt=""></p>
+<h3 id="付款成功及使用"><a href="#付款成功及使用" class="headerlink" title="付款成功及使用"></a>付款成功及使用</h3><p>&emsp;&emsp;确认付款成功后，进入客户区: <a href="https://bwh1.net/clientarea.php?action=products" target="_blank" rel="external">Client Area</a><br>等待一两分钟，就可以看到已经成功买到的VPS主机，我们可以登录面板使用。</p>
+<p><img src="https://i.imgur.com/tMVRH4e.jpg" alt=""></p>
+<h2 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks"></a>安装Shadowsocks</h2><h3 id="进入控制面板"><a href="#进入控制面板" class="headerlink" title="进入控制面板"></a>进入控制面板</h3><p>&emsp;&emsp;选择<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">KiwiVM Control Panel</div></pre></td></tr></table></figure></p>
+<h3 id="一键安装shadowsocks"><a href="#一键安装shadowsocks" class="headerlink" title="一键安装shadowsocks"></a>一键安装shadowsocks</h3><p>&emsp;&emsp;因为控制面板的初始系统是Centos 6(32bit),所以无需重装系统，直接一键安装shadowsocks。<br><img src="https://i.imgur.com/WJvfDxx.jpg" alt=""></p>
+<p>&emsp;&emsp;安装成功</p>
+<p><img src="https://i.imgur.com/JoqIUrw.jpg" alt=""></p>
+<p>设置好以后请记住你的IP 跟协议类型、端口、密码，点击<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Go back</div></pre></td></tr></table></figure></p>
+<p>就能够看到了。</p>
+<p><img src="https://i.imgur.com/OaDZ0Uh.png" alt=""></p>
+<h3 id="下载Shadowsocks"><a href="#下载Shadowsocks" class="headerlink" title="下载Shadowsocks"></a>下载Shadowsocks</h3><p>&emsp;&emsp;windows下载<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.6/Shadowsocks-4.0.6.zip" target="_blank" rel="external">Shadowsocks-4.0.6.zip</a></p>
+<p>&emsp;&emsp;或在开发者的网站下载最新版本: <a href="https://github.com/shadowsocks" target="_blank" rel="external">https://github.com/shadowsocks</a><br>下载后，提取zip文件并启动Shadowsocks.exe</p>
+<h3 id="Shadowsocks-设置"><a href="#Shadowsocks-设置" class="headerlink" title="Shadowsocks 设置"></a>Shadowsocks 设置</h3><p>&emsp;&emsp;找到Shadowsocks托盘图标并双击,看到如下所示的设置窗口：<br><img src="https://i.imgur.com/O6zGTo0.jpg" alt=""></p>
+<p>&emsp;&emsp;勾上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">启用系统代理</div></pre></td></tr></table></figure></p>
+<p>（鼠标右键Shadowsocks托盘图标）<br><img src="https://i.imgur.com/YnNXGTY.jpg" alt=""></p>
+<p>&emsp;&emsp;然后就没有然后啦:)</p>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2017/09/29/Quirk/" title= Quirk >
+                    <span>Previous Post</span>
+                    <span>Quirk</span>
+                </a>
+            </li>
+        
+    </ul>
+
+
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
+
+    
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer">
+    <!-- social  -->
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">©<a href="#">2017</a>
+        </span>
+        <span class="iconfont-archer power">&#xe635;</span>
+        <span id="theme-info">wh7te's <a href="https://wh7te.github.io" target="_self">blog</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+</footer>
+    </div>
+    <div class="back-top">&#xe639;</div>
+    <div class="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-category">
+            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
+            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
+        </div>
+    </div>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-archive">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 2 </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/02</span><a class="archive-post-title" href= "/2017/10/02/小白搬瓦工(BandwagonHost)搭建Shadowsocks/" >小白搬瓦工(BandwagonHost)搭建Shadowsocks</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Quirk/" >Quirk</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #888; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+

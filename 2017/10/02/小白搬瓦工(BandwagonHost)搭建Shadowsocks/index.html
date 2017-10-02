@@ -174,6 +174,23 @@
 <!-- City版安装代码已完成 -->
     
     
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id: "小白搬瓦工(BandwagonHost)搭建Shadowsocks", // 可选。默认为 location.href
+        owner: 'wh7te',
+        repo: 'blog',
+        oauth: {
+            client_id: '0098f40da6489d35e326',
+            client_secret: '5b3bbb858195b8a8f180c568a71722585f0cb4d9',
+        },
+    })
+    gitment.render('container')
+
+</script>
+
     <!--PC版-->
 
     
@@ -210,11 +227,6 @@
         <span id="theme-info">wh7te's <a href="https://wh7te.github.io" target="_self">blog</a></span>
     </div>
     <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-        <span id="busuanzi_container_page_pv">Welcome, No. <span id="busuanzi_value_page_pv"></span>
-        </span>
-    </div>
     
 </footer>
     </div>
@@ -309,8 +321,6 @@ jsonContent:
     }
 </script>
     <!-- 不蒜子  -->
-    
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
     <!-- CNZZ统计  -->
     

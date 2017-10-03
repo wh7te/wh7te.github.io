@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-02T15:48:36.000Z</updated>
+  <updated>2017-10-03T11:52:32.288Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2017/10/02/%E5%B0%8F%E7%99%BD%E6%90%AC%E7%93%A6%E5%B7%A5(BandwagonHost)%E6%90%AD%E5%BB%BAShadowsocks/"/>
     <id>http://yoursite.com/2017/10/02/小白搬瓦工(BandwagonHost)搭建Shadowsocks/</id>
     <published>2017-10-01T17:42:47.421Z</published>
-    <updated>2017-10-02T15:48:36.000Z</updated>
+    <updated>2017-10-03T11:52:32.288Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;买vps的理由就不用多说，有了vps又怎能少的了搭个ss呢。当然我今天的目标是让没有这方面经验的朋友能快速上手，所以只是讲搬瓦工后台一键安装，动手能力强的朋友可以自行试试shell脚本安装或是手动安装，大佬们请无视咯：)。好了，废话不多说。</p><h2 id="vps购买"><a href="#vps购买" class="headerlink" title="vps购买"></a>vps购买</h2><h3 id="vps选择"><a href="#vps选择" class="headerlink" title="vps选择"></a>vps选择</h3><p>&emsp;&emsp;vps的选择其实挺多，还有 <a href="http://www.vultr.com/" target="_blank" rel="external">Vultr</a>、<a href="http://www.linode.com/" target="_blank" rel="external">Linode</a>等都很不错，不过今天从各方面综合考虑，推荐搬瓦工给小白们。</p><h3 id="vps支付"><a href="#vps支付" class="headerlink" title="vps支付"></a>vps支付</h3><p>&emsp;&emsp;vps套餐有很多，选择适合自己的就好了，<a href="https://bwh1.net/vps-hosting.php" target="_blank" rel="external">搬瓦工(BandwagonHost)</a></p><p><img src="https://i.imgur.com/1E5l6ko.jpg" alt=""></p><p>&emsp;&emsp;对于小白，推荐19.99美刀一年的套餐，适合新手学习Linux系统和建站使用，使用优惠码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BWH1ZBPVK</div></pre></td></tr></table></figure></p><p>还能减6%<br><img src="https://i.imgur.com/SrjSVr0.jpg" alt=""></p><p>&emsp;&emsp;之后是填写信息,除了邮箱外，都可随意。</p><p><img src="https://i.imgur.com/YemnItD.jpg" alt=""></p><p>&emsp;&emsp;支付方式有支付宝，选择Alipay即可，这一点倒很方便。</p><p><img src="https://i.imgur.com/vWuPliR.jpg" alt=""></p><h3 id="付款成功及使用"><a href="#付款成功及使用" class="headerlink" title="付款成功及使用"></a>付款成功及使用</h3><p>&emsp;&emsp;确认付款成功后，进入客户区: <a href="https://bwh1.net/clientarea.php?action=products" target="_blank" rel="external">Client Area</a><br>等待一两分钟，就可以看到已经成功买到的VPS主机，我们可以登录面板使用。</p><p><img src="https://i.imgur.com/tMVRH4e.jpg" alt=""></p><h2 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks"></a>安装Shadowsocks</h2><h3 id="进入控制面板"><a href="#进入控制面板" class="headerlink" title="进入控制面板"></a>进入控制面板</h3><p>&emsp;&emsp;选择<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">KiwiVM Control Panel</div></pre></td></tr></table></figure></p><h3 id="一键安装shadowsocks"><a href="#一键安装shadowsocks" class="headerlink" title="一键安装shadowsocks"></a>一键安装shadowsocks</h3><p>&emsp;&emsp;因为控制面板的初始系统是Centos 6(32bit),所以无需重装系统，直接一键安装shadowsocks。<br><img src="https://i.imgur.com/WJvfDxx.jpg" alt=""></p><p>&emsp;&emsp;安装成功</p><p><img src="https://i.imgur.com/JoqIUrw.jpg" alt=""></p><p>设置好以后请记住你的IP 跟协议类型、端口、密码，点击<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Go back</div></pre></td></tr></table></figure></p><p>就能够看到了。</p><p><img src="https://i.imgur.com/OaDZ0Uh.png" alt=""></p><h3 id="下载Shadowsocks"><a href="#下载Shadowsocks" class="headerlink" title="下载Shadowsocks"></a>下载Shadowsocks</h3><p>&emsp;&emsp;windows下载<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.6/Shadowsocks-4.0.6.zip" target="_blank" rel="external">Shadowsocks-4.0.6.zip</a></p><p>&emsp;&emsp;或在开发者的网站下载最新版本: <a href="https://github.com/shadowsocks" target="_blank" rel="external">https://github.com/shadowsocks</a><br>下载后，提取zip文件并启动Shadowsocks.exe</p><h3 id="Shadowsocks-设置"><a href="#Shadowsocks-设置" class="headerlink" title="Shadowsocks 设置"></a>Shadowsocks 设置</h3><p>&emsp;&emsp;找到Shadowsocks托盘图标并双击,看到如下所示的设置窗口：<br><img src="https://i.imgur.com/O6zGTo0.jpg" alt=""></p><p>&emsp;&emsp;勾上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">启用系统代理</div></pre></td></tr></table></figure></p><p>（鼠标右键Shadowsocks托盘图标）<br><img src="https://i.imgur.com/YnNXGTY.jpg" alt=""></p><p>&emsp;&emsp;然后就没有然后啦:)</p>]]></content>
     
@@ -36,26 +36,7 @@
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>Quirk</title>
-    <link href="http://yoursite.com/2017/09/29/Quirk/"/>
-    <id>http://yoursite.com/2017/09/29/Quirk/</id>
-    <published>2017-09-29T08:04:03.493Z</published>
-    <updated>2017-09-29T08:04:03.516Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;在填志愿的那个夏天，我在建筑与数媒之间纠结了很久。为了能提前接触将会选择的专业，我尝试学习ps，结果难倒在了安装photoshop上，于是便花费了几个小时，去百度各种教程，找amtlib.dll文件。之后软件终于能使用了，当时还是很开心的，于是后来我就填了信安。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&amp;emsp;&amp;emsp;在填志愿的那个夏天，我在建筑与数媒之间纠结了很久。为了能提前接触将会选择的专业，我尝试学习ps，结果难倒在了安装photoshop上，于是便花费了几个小时，去百度各种教程，找amtlib.dll文件。之后软件终于能使用了，当时还是很开心的，于是后来我
-      
-    
-    </summary>
-    
+      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
     
   </entry>
   

@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://wh7te.github.io/"/>
   <updated>2017-10-03T11:52:32.288Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://wh7te.github.io/</id>
   
   <author>
     <name>wh7te</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>小白搬瓦工(BandwagonHost)搭建Shadowsocks</title>
-    <link href="http://yoursite.com/2017/10/02/%E5%B0%8F%E7%99%BD%E6%90%AC%E7%93%A6%E5%B7%A5(BandwagonHost)%E6%90%AD%E5%BB%BAShadowsocks/"/>
-    <id>http://yoursite.com/2017/10/02/小白搬瓦工(BandwagonHost)搭建Shadowsocks/</id>
+    <link href="https://wh7te.github.io/2017/10/02/%E5%B0%8F%E7%99%BD%E6%90%AC%E7%93%A6%E5%B7%A5(BandwagonHost)%E6%90%AD%E5%BB%BAShadowsocks/"/>
+    <id>https://wh7te.github.io/2017/10/02/小白搬瓦工(BandwagonHost)搭建Shadowsocks/</id>
     <published>2017-10-01T17:42:47.421Z</published>
     <updated>2017-10-03T11:52:32.288Z</updated>
     
@@ -36,7 +36,7 @@
     </summary>
     
     
-      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+      <category term="vps" scheme="https://wh7te.github.io/tags/vps/"/>
     
   </entry>
   
